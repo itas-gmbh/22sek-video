@@ -2,18 +2,18 @@
 <!--<html >-->
   <script language="javascript">
   //$(document).ready(function(){  
-$('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+jQuery('.message a').click(function(){
+   jQuery('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
     
-    $('.login-form button').click(function(){
+    jQuery('.login-form button').click(function(){
 	loader('start');
-      var user = $('#loginuser').val();
-      var pass = $('#loginpass').val();
+      var user = jQuery('#loginuser').val();
+      var pass = jQuery('#loginpass').val();
       var dataString = "user=" + user + "&pass=" + pass;
       //alert("transfer started");
       //alert(dataString);
-       $.ajax({
+       jQuery.ajax({
 		    type: "POST",
 		    url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    data: dataString,
