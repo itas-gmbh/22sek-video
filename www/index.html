@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery-3.2.1.min.js"></script>
+	
+<link rel="stylesheet" type="text/css" href="./login_form/css/style.css">
+
+	
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<script language="javascript">
+ 	
+$( document ).ready(function() {
+    init();
+});
+    
+    function getpage(page){
+	//alert('getpage startedt');
+	    $.ajax({
+		type: "POST",
+		url: page,
+		//data: dataString,
+		crossDomain: true,
+		cache: false,
+		//beforeSend: function(){ $("#login").html('Connecting...');},
+		success: function(data){
+		$("#main").html(data);
+		}
+		});
+        
+    }
+    
+    function init(){
+        //check if logged in
+        var user = window.localStorage.getItem("user");
+        //alert(user);
+        if(user == null){
+            getpage('./login_form/index.html'); 
+        } else {
+            getpage('./video/index.html');
+	    $('#head_bar').fadeIn('fast');
+        }
+    }
+    
+    function logout(){
+     	window.localStorage.removeItem("user");
+	    location.reload();
+        
+    }
+	
+    function loader(status) {
+	if(status == "start") {
+		$('#loader').fadeIn('slow');
+		$('#main').fadeOut('slow');
+	} else {
+		$('#loader').fadeOut('slow');
+		$('#main').fadeIn('slow');
+	}
+    }
+	
+    function info(text) {
+	$('#info').fadeIn('fast');
+	$('#info').html(text);
+	$('#info').delay(3000).fadeOut('slow');
+	    
+    }
+    
+
+
+</script>
+<style>
+
+
+</style>
+</head>
+
+
+<body>
+    <div id="head_bar"><div id="user">michl91</div><div id="logout" onclick="logout()">Logout</div></div>
+    <div id="logo"></div>
+    <div id="main"></div>
+    <div id="info"></div>
+    <div id="loader"></div>
+
+
+</body>
+
+
+
+</html>

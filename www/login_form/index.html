@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--<html >-->
+  <script language="javascript">
+  //$(document).ready(function(){  
+$('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+    
+    $('.login-form button').click(function(){
+	loader('start');
+      var user = $('#loginuser').val();
+      var pass = $('#loginpass').val();
+      var dataString = "user=" + user + "&pass=" + pass;
+      //alert("transfer started");
+      //alert(dataString);
+       $.ajax({
+		    type: "POST",
+		    url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
+		    data: dataString,
+		    crossDomain: true,
+		    cache: false,
+		    //beforeSend: function(){ $("#login").html('Connecting...');},
+		    success: function(data){
+         		//alert(data);
+			    if(data != 0){
+				localStorage.setItem("user", data);
+				loader('stop');
+				location.reload();
+				//alert("login successful");
+		    		//$("#main").html(data);
+				//info('Login erfolgreich');
+			    } else {
+				//alert("login incorrect");  
+				info('Benutzername oder Passwort falsch');
+				loader('stop');
+			    }
+		    }
+	       		
+		   });
+	    loader('stop');
+    });
+    
+   
+    
+    
+    
+    
+    
+    
+  </script>
+<!--<body>-->
+  <div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="Benutzername"/>
+      <input type="password" placeholder="Passwort"/>
+      <input type="text" placeholder="Email Adresse"/>
+      <button>Registrieren</button>
+      <p class="message">Bereits registriert? <a href="#">zum Login</a></p>
+    </form>
+    <form class="login-form">
+      <input id="loginuser" type="text" placeholder="Benutzername"/>
+      <input id="loginpass" type="password" placeholder="Passwort"/>
+      <button>login</button>
+      <p class="message">Noch nicht registriert? <a href="#">Account erstellen</a></p>
+    </form>
+  </div>
+</div>
+ 
+
+  
+<!--
+</body>
+</html>
+-->
