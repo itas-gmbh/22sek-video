@@ -1,9 +1,9 @@
 
 
-$(document).ready(function(){  
-$('.message a').click(function(){
+jQuery(document).ready(function(){  
+jQuery('.message a').click(function(){
    alert("click executed");
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+   jQuery('form').animate({height: "toggle", opacity: "toggle"}, "slow");
    alert("click executed");
 });
 });
