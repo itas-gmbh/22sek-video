@@ -11,13 +11,13 @@
 
 <script language="javascript">
  	
-$( document ).ready(function() {
+jQuery( document ).ready(function() {
     init();
 });
     
     function getpage(page){
 	//alert('getpage startedt');
-	    $.ajax({
+	    jQuery.ajax({
 		type: "POST",
 		url: page,
 		//data: dataString,
@@ -25,7 +25,7 @@ $( document ).ready(function() {
 		cache: false,
 		//beforeSend: function(){ $("#login").html('Connecting...');},
 		success: function(data){
-		$("#main").html(data);
+		jQuery("#main").html(data);
 		}
 		});
         
@@ -39,7 +39,7 @@ $( document ).ready(function() {
             getpage('./login_form/index.html'); 
         } else {
             getpage('./video/index.html');
-	    $('#head_bar').fadeIn('fast');
+	    jQuery('#head_bar').fadeIn('fast');
         }
     }
     
@@ -51,18 +51,18 @@ $( document ).ready(function() {
 	
     function loader(status) {
 	if(status == "start") {
-		$('#loader').fadeIn('slow');
-		$('#main').fadeOut('slow');
+		jQuery('#loader').fadeIn('slow');
+		jQuery('#main').fadeOut('slow');
 	} else {
-		$('#loader').fadeOut('slow');
-		$('#main').fadeIn('slow');
+		jQuery('#loader').fadeOut('slow');
+		jQuery('#main').fadeIn('slow');
 	}
     }
 	
     function info(text) {
-	$('#info').fadeIn('fast');
-	$('#info').html(text);
-	$('#info').delay(3000).fadeOut('slow');
+	jQuery('#info').fadeIn('fast');
+	jQuery('#info').html(text);
+	jQuery('#info').delay(3000).fadeOut('slow');
 	    
     }
     
