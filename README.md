@@ -1,1 +1,1 @@
-# 22sek-video
+# 22sek-video app
