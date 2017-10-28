@@ -77,6 +77,11 @@ height: 100px;
  
 }
 
+#main {
+ min-width: 200px;
+ min-height: 400px;
+}
+
 
 
 
