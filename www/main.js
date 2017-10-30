@@ -66,6 +66,13 @@
     		//alert("loading between");
     		//jQuery('.login-form button').click(function(){
 		function go_login(){
+			
+			
+			 $(document).ajaxError(function(e, xhr, opt){
+        alert("Error requesting " + opt.url + ": " + xhr.status + " " + xhr.statusText);
+    });
+			
+			
 	    		alert("buttooon");
 			loader('start');
       			var user = jQuery('#loginuser').val();
