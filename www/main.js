@@ -1,5 +1,6 @@
 	 jQuery(window).on('load', function() {
     		init();
+		 alert("new window");
 	});
     
     function getpage(page){
@@ -80,14 +81,9 @@
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
 				crossDomain: true,
-				//cache: false,
+				cache: false,
 				dataType: 'html',
 				//beforeSend: function(){ $("#login").html('Connecting...');}
-				  statusCode: {
-    404: function() {
-      alert( "page not found" );
-    }
-  },
 				success: function(data){
 			    		if(data != 0){
 						localStorage.setItem("user", data);
@@ -108,7 +104,7 @@
 	       		
 		  	 });
 	    loader('stop');
-			alert("finished");
+			
     	//});
 	}
 
