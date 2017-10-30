@@ -19,12 +19,15 @@
     function init(){
         //check if logged in
         var user = window.localStorage.getItem("user");
+
         //alert(user);
         if(user == null){
             getpage('./login_form/index.html'); 
         } else {
             getpage('./video/index.html');
 	    jQuery('#head_bar').fadeIn('fast');
+	    alert(user.id);
+		alert(user.user);
         }
     }
     
