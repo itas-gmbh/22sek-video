@@ -1,5 +1,63 @@
  <script language="javascript">
    
+	 
+	 jQuery(window).on('load', function() {
+    		init();
+	});
+    
+    function getpage(page){
+	//alert('getpage startedt');
+	    jQuery.ajax({
+		type: "POST",
+		url: page,
+		dataType: 'html',
+		//data: dataString,
+		crossDomain: true,
+		cache: false,
+		//beforeSend: function(){ $("#login").html('Connecting...');},
+		success: function(data){
+		jQuery("#main").html(data);
+		}
+		});
+        
+    }
+    
+    function init(){
+        //check if logged in
+        var user = window.localStorage.getItem("user");
+        //alert(user);
+        if(user == null){
+            getpage('./login_form/index.html'); 
+        } else {
+            getpage('./video/index.html');
+	    jQuery('#head_bar').fadeIn('fast');
+        }
+    }
+    
+    function logout(){
+     	window.localStorage.removeItem("user");
+	    location.reload();
+        
+    }
+	
+    function loader(status) {
+	if(status == "start") {
+		jQuery('#loader').fadeIn('slow');
+		jQuery('#main').fadeOut('slow');
+	} else {
+		jQuery('#loader').fadeOut('slow');
+		jQuery('#main').fadeIn('slow');
+	}
+    }
+	
+    function info(text) {
+	jQuery('#info').fadeIn('fast');
+	jQuery('#info').html(text);
+	jQuery('#info').delay(3000).fadeOut('slow');
+	    
+    }
+    
+
 	  	//alert("Login Page loaded");
 		jQuery('.message a').click(function(){
    			jQuery('form').animate({height: "toggle", opacity: "toggle"}, "slow");
