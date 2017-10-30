@@ -66,7 +66,7 @@
     		//alert("loading between");
     		//jQuery('.login-form button').click(function(){
 		function go_login(){
-	    		alert("buttooon");
+	    		//alert("buttooon");
 			loader('start');
       			var user = jQuery('#loginuser').val();
       			var pass = jQuery('#loginpass').val();
@@ -81,16 +81,16 @@
 				cache: false,
 				//beforeSend: function(){ $("#login").html('Connecting...');},
 				success: function(data){
-					alert(data);
+					//alert(data);
 			    		if(data != 0){
 						localStorage.setItem("user", data);
 						loader('stop');
 						location.reload();
-						alert("login successful");
+						//alert("login successful");
 		    				//$("#main").html(data);
 						//info('Login erfolgreich');
 			   		 } else {
-						alert("login incorrect");  
+						//alert("login incorrect");  
 						info('Benutzername oder Passwort falsch');
 						loader('stop');
 			   		 }
