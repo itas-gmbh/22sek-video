@@ -1,58 +1,5 @@
 <!--<html >-->
-  <script language="javascript">
-   
-	  	//alert("Login Page loaded");
-		jQuery('.message a').click(function(){
-   			jQuery('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-		});
-	  
-	  	
-    		//alert("loading between");
-    		jQuery('.login-form button').click(function(){
-	    		alert("buttooon");
-			loader('start');
-      			var user = jQuery('#loginuser').val();
-      			var pass = jQuery('#loginpass').val();
-      			var dataString = "user=" + user + "&pass=" + pass;
-      			//alert("transfer started");
-      			//alert(dataString);
-       			jQuery.ajax({
-		    		type: "POST",
-		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
-		    		data: dataString,
-				crossDomain: true,
-				cache: false,
-				//beforeSend: function(){ $("#login").html('Connecting...');},
-				success: function(data){
-					alert(data);
-			    		if(data != 0){
-						localStorage.setItem("user", data);
-						loader('stop');
-						location.reload();
-						alert("login successful");
-		    				//$("#main").html(data);
-						//info('Login erfolgreich');
-			   		 } else {
-						alert("login incorrect");  
-						info('Benutzername oder Passwort falsch');
-						loader('stop');
-			   		 }
-		   		 }
-	       		
-		  	 });
-	    loader('stop');
-    	});
-			
-		
-    
-   
-    
-    
-    
-    
-    
-    
-  </script>
+ 
   
 <!--<body>-->
   <div class="login-page">
