@@ -1,33 +1,15 @@
 <!DOCTYPE html>
 <!--<html >-->
- 
-<!--<body>-->
-  <div class="login-page">
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="Benutzername"/>
-      <input type="password" placeholder="Passwort"/>
-      <input type="text" placeholder="Email Adresse"/>
-      <button>Registrieren</button>
-      <p class="message">Bereits registriert? <a href="#">zum Login</a></p>
-    </form>
-    <form class="login-form">
-      <input id="loginuser" type="text" placeholder="Benutzername"/>
-      <input id="loginpass" type="password" placeholder="Passwort"/>
-      <button>login</button>
-      <p class="message">Noch nicht registriert? <a href="#">Account erstellen</a></p>
-    </form>
-  </div>
-</div>
- 
- <script language="javascript">
+  <script language="javascript">
    
 	  	//alert("Login Page loaded");
 		jQuery('.message a').click(function(){
    			jQuery('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 		});
+	  
+	  	function go_login(){
     		//alert("loading between");
-    		jQuery('.login-form button').click(function(){
+    		//jQuery('.login-form button').click(function(){
 	    		//alert("buttooon");
 			loader('start');
       			var user = jQuery('#loginuser').val();
@@ -60,7 +42,9 @@
 	       		
 		  	 });
 	    loader('stop');
-    	});
+    	//});
+			
+		}
     
    
     
@@ -71,6 +55,26 @@
     
   </script>
   
+<!--<body>-->
+  <div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="Benutzername"/>
+      <input type="password" placeholder="Passwort"/>
+      <input type="text" placeholder="Email Adresse"/>
+      <button onClick="go">Registrieren</button>
+      <p class="message">Bereits registriert? <a href="#">zum Login</a></p>
+    </form>
+    <form class="login-form">
+      <input id="loginuser" type="text" placeholder="Benutzername"/>
+      <input id="loginpass" type="password" placeholder="Passwort"/>
+      <button onClick="go_login">login</button>
+      <p class="message">Noch nicht registriert? <a href="#">Account erstellen</a></p>
+    </form>
+  </div>
+</div>
+ 
+
 <!--
 </body>
 </html>
