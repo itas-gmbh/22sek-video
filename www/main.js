@@ -99,7 +99,7 @@
 		   		 }
 	       		
 		  	 });
-	    loader('stop');
+	    //loader('stop');
 			
     	//});
 	}
