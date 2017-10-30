@@ -113,6 +113,7 @@
 
 
 function videoCapture() {
+	alert("video capture started");
    var options = {
       limit: 1,
       duration: 10
@@ -120,6 +121,7 @@ function videoCapture() {
    navigator.device.capture.captureVideo(onSuccess, onError, options);
 
    function onSuccess(mediaFiles) {
+	   alert("video capture successful");
       var i, path, len;
       for (i = 0, len = mediaFiles.length; i < len; i += 1) {
          path = mediaFiles[i].fullPath;
@@ -128,6 +130,7 @@ function videoCapture() {
    }
 
    function onError(error) {
+	   alert("video capture error");
       navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
    }
 }
