@@ -62,7 +62,8 @@
 	  
 	  	
     		//alert("loading between");
-    		jQuery('.login-form button').click(function(){
+    		//jQuery('.login-form button').click(function(){
+		function go_login(){
 	    		alert("buttooon");
 			loader('start');
       			var user = jQuery('#loginuser').val();
@@ -95,7 +96,8 @@
 	       		
 		  	 });
 	    loader('stop');
-    	});
+    	//});
+	}
 			
 		
     
