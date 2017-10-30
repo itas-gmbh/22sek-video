@@ -82,6 +82,7 @@
 		    		type: "POST",
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
+				dataType: 'html',
 				crossDomain: true,
 				cache: false,
 				//beforeSend: function(){ $("#login").html('Connecting...');},
@@ -116,7 +117,7 @@ function videoCapture() {
       limit: 1,
       duration: 10
    };
-   navigator.device.capture.captureVideo(onSuccess, onError, options);
+  // navigator.device.capture.captureVideo(onSuccess, onError, options);
 
    function onSuccess(mediaFiles) {
       var i, path, len;
