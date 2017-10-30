@@ -1,4 +1,4 @@
-	 jQuery(window).on('load', function() {
+	 jQuery(body).on('load', function() {
     		init();
 	});
     
