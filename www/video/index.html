@@ -1,25 +1,27 @@
 <script language="javascript">
+document.getElementById("videoCapture").addEventListener("click", videoCapture);
+    
+function videoCapture() {
+   var options = {
+      limit: 1,
+      duration: 10
+   };
+   navigator.device.capture.captureVideo(onSuccess, onError, options);
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    console.log(navigator.device.capture);
+   function onSuccess(mediaFiles) {
+      var i, path, len;
+      for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+         path = mediaFiles[i].fullPath;
+         console.log(mediaFiles);
+      }
+   }
+
+   function onError(error) {
+      navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+   }
 }
-
-// capture callback
-var captureSuccess = function(mediaFiles) {
-    var i, path, len;
-    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-        path = mediaFiles[i].fullPath;
-        // do something interesting with the file
-    }
-};
-
-// capture error callback
-var captureError = function(error) {
-    navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
-};
-
-// start video capture
-navigator.device.capture.captureVideo(captureSuccess, captureError, {limit:2});
-
 </script>
+
+<button id="videoCapture">Video aufnehmen</button>
+
+
