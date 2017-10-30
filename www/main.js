@@ -77,11 +77,11 @@
       			alert(dataString);
        			$.ajax({
 		    		type: "POST",
-		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
+		    		url: "http://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
 				crossDomain: true,
-				cache: false,
-				dataType: 'text',
+				//cache: false,
+				dataType: 'html',
 				//beforeSend: function(){ $("#login").html('Connecting...');}
 				  statusCode: {
     404: function() {
