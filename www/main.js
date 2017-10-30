@@ -65,7 +65,7 @@
 		function go_login(){
 	    		
 			loader('start');
-			alert("buttooon");
+			//alert("buttooon");
       			var user = jQuery('#loginuser').val();
       			var pass = jQuery('#loginpass').val();
       			var dataString = "user=" + user + "&pass=" + pass;
@@ -84,8 +84,8 @@
 			    		if(data != 0){
 						localStorage.setItem("user", data);
 						loader('stop');
-						alert("login correct");
-						//location.reload();
+						//alert("login correct");
+						location.reload();
 						
 						//alert("login successful");
 		    				//$("#main").html(data);
@@ -94,12 +94,12 @@
 						//alert("login incorrect");  
 						info('Benutzername oder Passwort falsch');
 						loader('stop');
-						 alert("login incorrect");
+						//alert("login incorrect");
 			   		 }
 		   		 }
 	       		
 		  	 });
-	    //loader('stop');
+	    loader('stop');
 			
     	//});
 	}
