@@ -80,7 +80,7 @@
       			//alert("transfer started");
       			alert(dataString);
        			jQuery.ajax({
-		    		type: "POST",
+		    		type: "GET",
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
 				crossDomain: true,
