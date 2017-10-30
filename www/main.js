@@ -80,12 +80,16 @@
       			//alert("transfer started");
       			alert(dataString);
        			jQuery.ajax({
-		    		type: "GET",
+		    		type: "POST",
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
 				crossDomain: true,
 				cache: false,
+				dataType: 'text',
 				//beforeSend: function(){ $("#login").html('Connecting...');},
+				error: function(jqXHR, textStatus, errorThrown){
+					alert(textStatus, errorThrown);	
+				},
 				success: function(data){
 			    		if(data != 0){
 						localStorage.setItem("user", data);
