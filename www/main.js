@@ -82,7 +82,10 @@
 				//beforeSend: function(){ $("#login").html('Connecting...');}
 				success: function(data){
 			    		if(data != 0){
-						localStorage.setItem("user", data);
+						var obj = jQuery.parseJSON(data);
+						alert(obj.id);
+						alert(obj.user);
+						//localStorage.setItem("user", data);
 						loader('stop');
 						//alert("login correct");
 						location.reload();
