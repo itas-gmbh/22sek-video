@@ -83,7 +83,6 @@
 		    		type: "POST",
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
-				dataType: 'html',
 				crossDomain: true,
 				cache: false,
 				//beforeSend: function(){ $("#login").html('Connecting...');},
