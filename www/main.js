@@ -71,7 +71,7 @@
 			
 			
 			
-	    		alert("buttooon");
+	    		//alert("buttooon");
 			loader('start');
       			var user = jQuery('#loginuser').val();
       			var pass = jQuery('#loginpass').val();
@@ -86,7 +86,6 @@
 				crossDomain: true,
 				cache: false,
 				//beforeSend: function(){ $("#login").html('Connecting...');},
-				
 				success: function(data){
 					alert(data);
 			    		if(data != 0){
@@ -109,26 +108,6 @@
 	}
 
 
-function videoCapture() {
-   var options = {
-      limit: 1,
-      duration: 10
-   };
-  // navigator.device.capture.captureVideo(onSuccess, onError, options);
 
-   function onSuccess(mediaFiles) {
-      var i, path, len;
-      for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-         path = mediaFiles[i].fullPath;
-         console.log(mediaFiles);
-      }
-   }
-
-   function onError(error) {
-      navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
-   }
-}
-			
-		
     
  
