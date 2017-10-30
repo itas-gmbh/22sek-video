@@ -91,6 +91,7 @@
 						localStorage.setItem("user", data);
 						loader('stop');
 						location.reload();
+						alert("login correct");
 						//alert("login successful");
 		    				//$("#main").html(data);
 						//info('Login erfolgreich');
@@ -98,6 +99,7 @@
 						//alert("login incorrect");  
 						info('Benutzername oder Passwort falsch');
 						loader('stop');
+						 alert("login incorrect");
 			   		 }
 		   		 }
 	       		
