@@ -82,7 +82,7 @@
       			//alert(dataString);
        			jQuery.ajax({
 		    		type: "POST",
-		    		url: "https://s22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
+		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
 				crossDomain: true,
 				cache: false,
