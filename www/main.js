@@ -1,8 +1,4 @@
-	 jQuery(window).on('load', function() {
-    		init();
-		 alert("new window");
-	});
-    
+  
     function getpage(page){
 	//alert('getpage startedt');
 	    jQuery.ajax({
