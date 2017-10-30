@@ -76,8 +76,9 @@
       			var user = jQuery('#loginuser').val();
       			var pass = jQuery('#loginpass').val();
       			var dataString = "user=" + user + "&pass=" + pass;
+			
       			//alert("transfer started");
-      			//alert(dataString);
+      			alert(dataString);
        			jQuery.ajax({
 		    		type: "POST",
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
@@ -87,7 +88,6 @@
 				cache: false,
 				//beforeSend: function(){ $("#login").html('Connecting...');},
 				success: function(data){
-					alert(data);
 			    		if(data != 0){
 						localStorage.setItem("user", data);
 						loader('stop');
