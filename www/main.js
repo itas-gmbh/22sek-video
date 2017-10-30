@@ -81,8 +81,7 @@
 				cache: false,
 				//beforeSend: function(){ $("#login").html('Connecting...');},
 				error: function(xhr, status, error){
-					var err = eval("(" + xhr.responseText + ")");
-  					alert(err.Message);
+					alert(xhr.responseText);
 					
  				},
 				success: function(data){
