@@ -1,8 +1,5 @@
 	 jQuery(window).on('load', function() {
     		init();
-		  $(document).ajaxError(function(e, xhr, opt){
-        alert("Error requesting " + opt.url + ": " + xhr.status + " " + xhr.statusText);
-    });
 	});
     
     function getpage(page){
