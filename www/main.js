@@ -83,9 +83,7 @@
 				success: function(data){
 			    		if(data != 0){
 						var obj = jQuery.parseJSON(data);
-						alert(obj.id);
-						alert(obj.user);
-						//localStorage.setItem("user", data);
+						localStorage.setItem("user", obj);
 						loader('stop');
 						//alert("login correct");
 						location.reload();
