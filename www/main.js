@@ -82,6 +82,7 @@
 				//beforeSend: function(){ $("#login").html('Connecting...');},
 				error: function(xhr, error){
         				console.debug(xhr); console.debug(error);
+					alert(xhr + error);
  				},
 				success: function(data){
 					alert(data);
