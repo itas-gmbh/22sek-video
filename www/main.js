@@ -26,13 +26,14 @@
         } else {
             getpage('./video/index.html');
 	    jQuery('#head_bar').fadeIn('fast');
-	    alert(user.id);
-		alert(user.user);
+		jQuery('#user').html(user);
+	    
         }
     }
     
     function logout(){
-     	window.localStorage.removeItem("user");
+     	localStorage.removeItem("user");
+	localStorage.removeItem("id");
 	    location.reload();
         
     }
@@ -86,7 +87,8 @@
 				success: function(data){
 			    		if(data != 0){
 						var obj = jQuery.parseJSON(data);
-						localStorage.setItem("user", obj);
+						localStorage.setItem("user", obj.user);
+						localStorage.setItem("id", obj.id);
 						loader('stop');
 						//alert("login correct");
 						location.reload();
