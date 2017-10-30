@@ -66,30 +66,28 @@
     		//alert("loading between");
     		//jQuery('.login-form button').click(function(){
 		function go_login(){
-			
-			
-			
-			
-			
-	    		//alert("buttooon");
+	    		
 			loader('start');
+			alert("buttooon");
       			var user = jQuery('#loginuser').val();
       			var pass = jQuery('#loginpass').val();
       			var dataString = "user=" + user + "&pass=" + pass;
 			
       			//alert("transfer started");
       			alert(dataString);
-       			jQuery.ajax({
+       			$.ajax({
 		    		type: "POST",
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
 				crossDomain: true,
 				cache: false,
 				dataType: 'text',
-				//beforeSend: function(){ $("#login").html('Connecting...');},
-				error: function(jqXHR, textStatus, errorThrown){
-					alert(textStatus, errorThrown);	
-				},
+				//beforeSend: function(){ $("#login").html('Connecting...');}
+				  statusCode: {
+    404: function() {
+      alert( "page not found" );
+    }
+  },
 				success: function(data){
 			    		if(data != 0){
 						localStorage.setItem("user", data);
@@ -109,6 +107,7 @@
 	       		
 		  	 });
 	    loader('stop');
+			alert("finished");
     	//});
 	}
 
