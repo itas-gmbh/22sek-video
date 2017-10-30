@@ -1,6 +1,3 @@
- <script language="javascript">
-   
-	 
 	 jQuery(window).on('load', function() {
     		init();
 	});
@@ -102,11 +99,4 @@
 			
 		
     
-   
-    
-    
-    
-    
-    
-    
-  </script>
+ 
