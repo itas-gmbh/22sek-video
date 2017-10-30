@@ -71,8 +71,8 @@
       			var dataString = "user=" + user + "&pass=" + pass;
 			
       			//alert("transfer started");
-      			alert(dataString);
-       			$.ajax({
+      			//alert(dataString);
+       			jQuery.ajax({
 		    		type: "POST",
 		    		url: "https://22sekunden.at/wp-content/plugins/22sek-video/record/login.php",
 		    		data: dataString,
