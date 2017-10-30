@@ -42,8 +42,8 @@
 		jQuery('#loader').fadeIn('slow');
 		jQuery('#main').fadeOut('slow');
 	} else {
-		jQuery('#loader').fadeOut('slow');
-		jQuery('#main').fadeIn('slow');
+		jQuery('#loader').delay(1000).fadeOut('slow');
+		jQuery('#main').delay(1000).fadeIn('slow');
 	}
     }
 	
@@ -56,9 +56,11 @@
     
 
 	  	//alert("Login Page loaded");
-		jQuery('.message a').click(function(){
+		//jQuery('.message a').click(function(){
+		function change_form(){
    			jQuery('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-		});
+		//});
+		}
 	  
 	  	
     		//alert("loading between");
