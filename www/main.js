@@ -86,10 +86,7 @@
 				crossDomain: true,
 				cache: false,
 				//beforeSend: function(){ $("#login").html('Connecting...');},
-				error: function(xhr, status, error){
-					alert(xhr.responseText);
-					
- 				},
+				
 				success: function(data){
 					alert(data);
 			    		if(data != 0){
