@@ -112,27 +112,23 @@
 
 
 
-function videoCapture() {
-	alert("video capture started");
-   var options = {
-      limit: 1,
-      duration: 10
-   };
-   navigator.device.capture.captureVideo(onSuccess, onError, options);
+// capture callback
+var captureSuccess = function(mediaFiles) {
+    var i, path, len;
+    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+        path = mediaFiles[i].fullPath;
+        // do something interesting with the file
+    }
+};
 
-   function onSuccess(mediaFiles) {
-	   alert("video capture successful");
-      var i, path, len;
-      for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-         path = mediaFiles[i].fullPath;
-         console.log(mediaFiles);
-      }
-   }
+// capture error callback
+var captureError = function(error) {
+    navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+};
 
-   function onError(error) {
-	   alert("video capture error");
-      navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
-   }
+// start video capture
+function videoCapture(){
+navigator.device.capture.captureVideo(captureSuccess, captureError, {limit:2});
 }
 
 
