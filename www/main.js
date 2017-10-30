@@ -92,8 +92,9 @@
 			    		if(data != 0){
 						localStorage.setItem("user", data);
 						loader('stop');
-						location.reload();
 						alert("login correct");
+						location.reload();
+						
 						//alert("login successful");
 		    				//$("#main").html(data);
 						//info('Login erfolgreich');
