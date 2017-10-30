@@ -93,7 +93,7 @@
 						localStorage.setItem("user", data);
 						loader('stop');
 						alert("login correct");
-						location.reload();
+						//location.reload();
 						
 						//alert("login successful");
 		    				//$("#main").html(data);
