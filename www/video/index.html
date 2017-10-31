@@ -2,7 +2,7 @@
        
  document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-       alert("device2 is ready");
+       //alert("device2 is ready");
     console.log(navigator.device.capture);
 }    
         
@@ -22,14 +22,14 @@ var captureError = function(error) {
 
 // start video capture
 function get_video(){
-        alert("get video started");
-navigator.device.capture.captureVideo(captureSuccess, captureError, {limit:2});
+        //alert("get video started");
+navigator.device.capture.captureVideo(captureSuccess, captureError, {duartion:5});
 }
         
 </script>
         
 
-<button id="takeVideo" onClick="javascript:get_video()">Take Video</button>
-        <div id="videoArea"></div>
+<div id="login" onClick="javascript:get_video()">Video aufnehmen</button>
+        
 
    
