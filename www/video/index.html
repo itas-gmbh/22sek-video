@@ -1,6 +1,10 @@
 <script language="javascript">
        
-        
+ document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+       alert("device is ready");
+    console.log(navigator.device.capture);
+}    
         
 // capture callback
 var captureSuccess = function(mediaFiles) {
