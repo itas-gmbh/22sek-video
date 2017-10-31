@@ -1,5 +1,11 @@
   
-    function getpage(page){
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(navigator.device.capture);
+        alert("Device is ready");
+}    
+
+function getpage(page){
 	//alert('getpage startedt');
 	    jQuery.ajax({
 		type: "POST",
