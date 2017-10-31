@@ -7,13 +7,12 @@ function onDeviceReady() {
 }    
         
 // capture callback
-var captureSuccess = function(mediaFiles) {
-    var i, path, len;
-    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
-        path = mediaFiles[i].fullPath;
-        // do something interesting with the file
+function captureSuccess(mediaFiles) {
+        var i, len;
+        for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+            uploadFile(mediaFiles[i]);
+        }       
     }
-};
 
 // capture error callback
 var captureError = function(error) {
@@ -25,6 +24,24 @@ function get_video(){
         //alert("get video started");
 navigator.device.capture.captureVideo(captureSuccess, captureError, {duartion:5});
 }
+       
+       
+        function uploadFile(mediaFile) {
+        var ft = new FileTransfer(),
+            path = mediaFile.fullPath,
+            name = mediaFile.name;
+
+        ft.upload(path,
+            "https://22sekunden.at/wp-content/plugins/22sek-video/record/upload.php",
+            function(result) {
+                console.log('Upload success: ' + result.responseCode);
+                console.log(result.bytesSent + ' bytes sent');
+            },
+            function(error) {
+                console.log('Error uploading file ' + path + ': ' + error.code);
+            },
+            { fileName: name });   
+    }
         
 </script>
         
