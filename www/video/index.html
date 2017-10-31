@@ -1,32 +1,35 @@
 <script language="javascript">
-        document.addEventListener("deviceready", init, false);
-function init() {
-    
-    
-    document.querySelector("#takeVideo").addEventListener("touchend", function() {
-        console.log("Take video");
-        navigator.device.capture.captureVideo(captureSuccess, captureError, {limit: 1});
-    }, false);
-    
+       
+        document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    console.log(navigator.device.capture);
+        alert("Device is ready");
 }
+        
+// capture callback
+var captureSuccess = function(mediaFiles) {
+    var i, path, len;
+    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+        path = mediaFiles[i].fullPath;
+        // do something interesting with the file
+    }
+};
 
-function captureError(e) {
-    console.log("capture error: "+JSON.stringify(e));
-}
+// capture error callback
+var captureError = function(error) {
+    navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+};
 
-function captureSuccess(s) {
-    console.log("Success");
-    console.dir(s[0]);
-    var v = "<video controls='controls'>";
-    v += "<source src='" + s[0].fullPath + "' type='video/mp4'>";
-    v += "</video>";
-    document.querySelector("#videoArea").innerHTML = v;
+// start video capture
+function get_video(){
+        alert("get video started");
+navigator.device.capture.captureVideo(captureSuccess, captureError, {limit:2});
 }
         
 </script>
         
 
-<button id="takeVideo">Take Video</button>
+<button id="takeVideo" onClick="javascript:get_video()">Take Video</button>
         <div id="videoArea"></div>
 
    
