@@ -16,6 +16,12 @@ function getpage(page){
     }
     
     function init(){
+	    
+	     document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+       			alert("device is ready");
+    			console.log(navigator.device.capture);
+		}    
         //check if logged in
         var user = window.localStorage.getItem("user");
 
