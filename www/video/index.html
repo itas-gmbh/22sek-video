@@ -22,11 +22,13 @@ var captureError = function(error) {
 // start video capture
 function get_video(){
         //alert("get video started");
-navigator.device.capture.captureVideo(captureSuccess, captureError, {duartion:5});
+navigator.device.capture.captureVideo(captureSuccess, captureError, {duration:5});
 }
        
        
         function uploadFile(mediaFile) {
+               var message = "Video wird hochgeladen";
+              navigator.notification.confirm(message, confirmCallback, [title], [buttonLabels])
         var ft = new FileTransfer(),
             path = mediaFile.fullPath,
             name = mediaFile.name;
