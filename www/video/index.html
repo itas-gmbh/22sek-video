@@ -19,6 +19,8 @@ function onDeviceReady() {
                var message = "Video wird hochgeladen";
              navigator.notification.alert('You are the winner!',alertDismissed,'Game Over','Done');
                alert(message);
+             navigator.vibrate(500);
+
         var ft = new FileTransfer(),
             path = mediaFile.fullPath,
             name = mediaFile.name;
