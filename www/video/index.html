@@ -28,7 +28,7 @@ navigator.device.capture.captureVideo(captureSuccess, captureError, {duration:5}
        
         function uploadFile(mediaFile) {
                var message = "Video wird hochgeladen";
-              navigator.notification.confirm(message, confirmCallback, [title], [buttonLabels])
+              
         var ft = new FileTransfer(),
             path = mediaFile.fullPath,
             name = mediaFile.name;
