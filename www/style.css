@@ -83,5 +83,16 @@ height: 100px;
 }
 
 
+#login {
+  text-align: center;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+
 
 
