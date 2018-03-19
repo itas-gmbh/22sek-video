@@ -17,7 +17,7 @@ function onDeviceReady() {
        
       function uploadFile(mediaFile) {
                var message = "Video wird hochgeladen";
-             navigator.notification.alert('You are the winner!',alertDismissed,'Game Over','Done');
+             navigator.notification.alert('Upload erfolgreich!',alertDismissed,'Fehler beim Upload','Done');
                alert(message);
              navigator.vibrate(500);
 
@@ -55,7 +55,7 @@ var captureError = function(error) {
 // start video capture
 function get_video(){
         //alert("get video started");
-navigator.device.capture.captureVideo(captureSuccess, captureError, {duration:5});
+navigator.device.capture.captureVideo(captureSuccess, captureError, {duration:22});
 }
        
        
